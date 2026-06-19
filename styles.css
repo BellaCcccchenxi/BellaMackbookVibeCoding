@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --work: #ff7a7a;   /* Melon Pop  */
+  --short: #a7b408;  /* Avocado Mash */
+  --long: #96c1dd;   /* Breezy Harbor */
+  --sun: #ffb40f;    /* Sun Pop */
+  --berry: #e41e71;  /* Bubbletini */
+  --lemon: #f8e473;  /* Lemon Whip */
+  --accent: var(--work);
+  --ink: #5a4453;        /* 暖调深字 */
+  --ink-soft: #a98ea0;   /* 次级字 */
+}
+
+body {
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+  background: linear-gradient(160deg, #fffdf3 0%, #fff4dd 100%);
+  color: var(--ink);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 20px;
+  gap: 18px;
+}
+
+.modes {
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.65);
+  padding: 5px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(180, 140, 90, 0.12);
+}
+
+.mode-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-btn.active {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.timer-wrap {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.ring-bg {
+  fill: none;
+  stroke: color-mix(in srgb, var(--accent) 18%, #ffffff);
+  stroke-width: 12;
+}
+
+.ring-fg {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 12;
+  stroke-linecap: round;
+  stroke-dasharray: 691.15;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.5s linear, stroke 0.3s;
+  filter: drop-shadow(0 2px 6px color-mix(in srgb, var(--accent) 40%, transparent));
+}
+
+.time {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 1px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.controls button {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s, opacity 0.2s;
+}
+
+.controls button:active {
+  transform: scale(0.96);
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+  min-width: 120px;
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.ghost {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(180, 140, 90, 0.12);
+}
+
+.count {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.count #count {
+  color: var(--berry);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.settings {
+  width: 100%;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.settings summary {
+  cursor: pointer;
+  text-align: center;
+  padding: 6px;
+  font-weight: 600;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.setting-row label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.setting-row input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid color-mix(in srgb, var(--accent) 30%, #ffffff);
+  color: var(--ink);
+  border-radius: 9px;
+  padding: 6px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.setting-row input:focus {
+  outline: none;
+  border-color: var(--accent);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>番茄钟</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div class="modes">
+      <button class="mode-btn active" data-mode="work">专注</button>
+      <button class="mode-btn" data-mode="short">短休息</button>
+      <button class="mode-btn" data-mode="long">长休息</button>
+    </div>
+
+    <div class="timer-wrap">
+      <svg class="ring" viewBox="0 0 240 240">
+        <circle class="ring-bg" cx="120" cy="120" r="110" />
+        <circle class="ring-fg" cx="120" cy="120" r="110" />
+      </svg>
+      <div class="time" id="time">25:00</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="primary">开始</button>
+      <button id="resetBtn" class="ghost">重置</button>
+    </div>
+
+    <div class="count">今日完成 🍅 <span id="count">0</span> 个</div>
+
+    <details class="settings">
+      <summary>设置时长（分钟）</summary>
+      <div class="setting-row">
+        <label>专注 <input type="number" id="workMin" min="1" max="120" value="25" /></label>
+        <label>短休息 <input type="number" id="shortMin" min="1" max="60" value="5" /></label>
+        <label>长休息 <input type="number" id="longMin" min="1" max="60" value="15" /></label>
+      </div>
+    </details>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
