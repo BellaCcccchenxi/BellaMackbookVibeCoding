@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>每日诗词</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="frame">
+    <!-- 生成式国风背景层 -->
+    <div id="bg-wash"></div>
+    <div id="bg-photo"></div>
+    <div id="bg-pattern"></div>
+
+    <!-- 角落梅枝装饰 -->
+    <svg id="branch" viewBox="0 0 120 120" aria-hidden="true">
+      <g fill="none" stroke="#6b4a2b" stroke-width="2.4" stroke-linecap="round">
+        <path d="M118 118 C96 104 84 88 78 66 C74 50 66 40 50 30" />
+        <path d="M78 66 C70 62 62 64 54 72" />
+        <path d="M84 88 C78 86 70 90 66 98" />
+      </g>
+      <g fill="#c33b4a" opacity="0.9">
+        <circle cx="50" cy="30" r="4.6"/><circle cx="44" cy="24" r="3.4"/>
+        <circle cx="56" cy="24" r="3.4"/><circle cx="50" cy="19" r="3.2"/>
+        <circle cx="54" cy="72" r="3.8"/><circle cx="66" cy="98" r="3.6"/>
+      </g>
+      <g fill="#f4c9cf" opacity="0.95">
+        <circle cx="50" cy="27" r="1.8"/><circle cx="54" cy="72" r="1.5"/>
+      </g>
+    </svg>
+
+    <!-- 关闭叉（右上角）-->
+    <button id="close" title="关闭">✕</button>
+
+    <!-- 内容宣纸面板 -->
+    <div id="paper">
+      <div id="top">
+        <aside id="side">
+          <div id="seal">诗</div>
+          <div id="festival"></div>
+          <div id="date-solar"></div>
+          <div id="date-lunar"></div>
+        </aside>
+
+        <main id="poem">
+          <div id="lines"></div>
+          <div id="meta">
+            <span id="title"></span>
+            <span id="author"></span>
+          </div>
+          <div id="note"></div>
+        </main>
+      </div>
+
+      <!-- 当日黄历：宜忌 · 幸运色 · 幸运数字 -->
+      <footer id="almanac">
+        <span class="alm-item"><b class="yi-tag">宜</b><span id="yi"></span></span>
+        <span class="alm-item"><b class="ji-tag">忌</b><span id="ji"></span></span>
+        <span class="alm-item" id="luck-color"><i id="swatch"></i><span id="color-name"></span></span>
+        <span class="alm-item" id="luck-num">幸运数 <b id="num"></b></span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
