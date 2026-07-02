@@ -21,6 +21,7 @@
   "build": {
     "appId": "com.poetry.widget",
     "productName": "每日诗词",
+    "artifactName": "PoetryWidget-${version}-${arch}.${ext}",
     "directories": { "output": "release" },
     "files": [
       "main.js",
